@@ -139,7 +139,6 @@ discourse:
   skipInstall: false
 
 sidekiq:
-
   securityContext: {}
   ## capabilities:
   ##   drop:
@@ -263,8 +262,6 @@ service:
   ## HTTP Port
   ##
   port: 80
-  ## Node Ports to expose
-  # nodePort:
   ## Enable client source IP preservation
   ## ref http://kubernetes.io/docs/tasks/access-application-cluster/create-external-load-balancer/#preserving-the-client-source-ip
   ##
@@ -275,7 +272,6 @@ service:
   loadBalancerSourceRanges: []
   ## Extra ports to expose (normally used with the `sidecar` value)
   # extraPorts:
-
   ## nodePorts:
   ##   http: <to set explicitly, choose port between 30000-32767>
   nodePorts:
@@ -363,6 +359,7 @@ postgresql:
   postgresqlUsername: bn_discourse
 
   ## PostgreSQL password
+  ## Defaults to a random 10-character alphanumeric string if not set
   ## ref: https://github.com/bitnami/bitnami-docker-postgresql/blob/master/README.md#setting-the-root-password-on-first-run
   ##
   ## postgresqlPassword:
